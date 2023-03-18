@@ -8,7 +8,7 @@ export interface NcDropDownItem {
   id: string;
   name: string;
   icon?: string;
-  href?: string;
+  href?: any;
 }
 
 export interface NcDropDownProps {

@@ -5,6 +5,7 @@ import rightLargeImgDark from "@/images/rightLargeImgDark.png";
 import ButtonPrimary from "@/shared/Button/ButtonPrimary";
 import Logo from "@/shared/Logo/Logo";
 import ButtonSecondary from "@/shared/Button/ButtonSecondary";
+import Link from "next/link";
 
 export interface SectionPromo1Props {
   className?: string;
@@ -27,12 +28,13 @@ const SectionPromo1: FC<SectionPromo1Props> = ({ className = "" }) => {
           <ButtonPrimary href="/collection" className="">
             Savings combo
           </ButtonPrimary>
-          <ButtonSecondary
-            href="/page-search"
-            className="border border-slate-100 dark:border-slate-700"
-          >
-            Discover more
-          </ButtonSecondary>
+          <Link href="/page-search">
+            <a>
+              <ButtonSecondary className="border border-slate-100 dark:border-slate-700">
+                Discover more
+              </ButtonSecondary>
+            </a>
+          </Link>
         </div>
       </div>
       <div className="relative flex-1 max-w-xl lg:max-w-none">

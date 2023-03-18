@@ -5,6 +5,7 @@ import ButtonPrimary from "@/shared/Button/ButtonPrimary";
 import Logo from "@/shared/Logo/Logo";
 import backgroundLineSvg from "@/images/Moon.svg";
 import Image from "next/image";
+import Link from "next/link";
 
 export interface SectionPromo2Props {
   className?: string;
@@ -34,12 +35,13 @@ const SectionPromo2: FC<SectionPromo2Props> = ({ className = "lg:pt-10" }) => {
             period and place.
           </span>
           <div className="flex space-x-2 sm:space-x-5 mt-6 sm:mt-12">
-            <ButtonPrimary
-              href="/page-search"
-              className="dark:bg-slate-200 dark:text-slate-900"
-            >
-              Discover more
-            </ButtonPrimary>
+            <Link href="/page-search">
+              <a>
+                <ButtonPrimary className="dark:bg-slate-200 dark:text-slate-900">
+                  Discover more
+                </ButtonPrimary>
+              </a>
+            </Link>
           </div>
         </div>
 
