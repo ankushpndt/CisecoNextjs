@@ -8,7 +8,8 @@ import {
   useIsPreviewing,
   Builder,
 } from "@builder.io/react";
-
+import dynamic from "next/dynamic";
+import DiscoverMoreSlider from "../components/DiscoverMoreSlider";
 // Initialize the Builder SDK with your organization's API Key
 // Find the API Key on: https://builder.io/account/settings
 builder.init("4dd684c28ac74d259def9eb31a7054f9");
@@ -90,23 +91,39 @@ export default function Page({ page }) {
 //  This is an example of registering a custom component to be used in Builder.io.
 //  You would typically do this in the file where the component is defined.
 
-const MyCustomComponent = (props) => (
-  <div>
-    <h1>{props.title}</h1>
-    <p>{props.description}</p>
-  </div>
-);
+import img1 from "@/images/collections/1.png";
+import img2 from "@/images/collections/5.png";
+import img3 from "@/images/collections/4.png";
+import img4 from "@/images/collections/3.png";
 
 //  This is a minimal example of a custom component, you can view more complex input types here:
 //  https://www.builder.io/c/docs/custom-react-components#input-types
-Builder.registerComponent(MyCustomComponent, {
-  name: "ExampleCustomComponent",
+Builder.registerComponent(DiscoverMoreSlider, {
+  name: "DiscoverMoreSlider",
   inputs: [
-    { name: "title", type: "string", defaultValue: "I am a React component!" },
     {
-      name: "description",
-      type: "string",
-      defaultValue: "Find my source in /pages/[...page].js",
+      name: "Explore new ",
+      desc: "Shop the latest <br /> from top brands",
+      featuredImage: img1,
+      color: "bg-yellow-50",
+    },
+    {
+      name: "Digital gift cards",
+      desc: "Give the gift <br /> of choice",
+      featuredImage: img2,
+      color: "bg-red-50",
+    },
+    {
+      name: "Sale collection",
+      desc: "Up to <br /> 80% off retail",
+      featuredImage: img3,
+      color: "bg-blue-50",
+    },
+    {
+      name: "Sale collection",
+      desc: "Up to <br /> 80% off retail",
+      featuredImage: img4,
+      color: "bg-green-50",
     },
   ],
 });
@@ -115,5 +132,5 @@ Builder.registerComponent(MyCustomComponent, {
 // https://www.builder.io/c/docs/custom-components-visual-editor#:~:text=than%20this%20screenshot.-,organizing%20your%20components%20in%20custom%20sections,-You%20can%20create
 Builder.register("insertMenu", {
   name: "My Components",
-  items: [{ item: "ExampleCustomComponent", name: "My React Component" }],
+  items: [{ name: "DiscoverMoreSlider" }],
 });

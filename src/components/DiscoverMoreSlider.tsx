@@ -95,7 +95,7 @@ const DiscoverMoreSlider = () => {
         Discover more
       </Heading>
       <div className="" data-glide-el="track">
-        <ul className="glide__slides">
+        <ul className="glide__slides mb-12">
           {CATS_DISCOVER.map((item, index) => (
             <li key={index} className={`glide__slide`}>
               <CardCategory3
