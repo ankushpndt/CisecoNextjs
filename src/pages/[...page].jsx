@@ -8,8 +8,24 @@ import {
   useIsPreviewing,
   Builder,
 } from "@builder.io/react";
-import dynamic from "next/dynamic";
+
+import "@/fonts/line-awesome-1.3.0/css/line-awesome.css";
+import "../styles/index.scss";
+import "rc-slider/assets/index.css";
+import "../app/globals.css";
+import { Poppins } from "next/font/google";
+
+import CommonClient from "../app/CommonClient";
+import Footer from "@/shared/Footer/Footer";
+import SiteHeader from "@/app/SiteHeader";
 import DiscoverMoreSlider from "../components/DiscoverMoreSlider";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  display: "optional",
+  weight: ["100", "300", "400", "500", "600", "700", "800"],
+});
+
 // Initialize the Builder SDK with your organization's API Key
 // Find the API Key on: https://builder.io/account/settings
 builder.init("4dd684c28ac74d259def9eb31a7054f9");
@@ -72,18 +88,13 @@ export default function Page({ page }) {
         <title>{page?.data.title}</title>
         <meta name="description" content={page?.data.descripton} />
       </Head>
-      <div style={{ padding: 50, textAlign: "center" }}>
-        {/* Put your header or main layout here */}
-        Your header
-      </div>
+      <SiteHeader />
 
       {/* Render the Builder page */}
       <BuilderComponent model="page" content={page} />
 
-      <div style={{ padding: 50, textAlign: "center" }}>
-        {/* Put your footer or main layout here */}
-        Your footer
-      </div>
+      <CommonClient />
+      <Footer />
     </>
   );
 }
