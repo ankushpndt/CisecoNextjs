@@ -5,7 +5,9 @@ import SectionPromo1 from "@/components/SectionPromo1";
 import SectionHero2 from "@/components/SectionHero/SectionHero2";
 import SectionSliderLargeProduct from "@/components/SectionSliderLargeProduct";
 import SectionSliderProductCard from "@/components/SectionSliderProductCard";
-import DiscoverMoreSlider from "@/components/DiscoverMoreSlider";
+import DiscoverMoreSlider, {
+  CATS_DISCOVER,
+} from "@/components/DiscoverMoreSlider";
 import SectionGridMoreExplore from "@/components/SectionGridMoreExplore/SectionGridMoreExplore";
 import SectionPromo2 from "@/components/SectionPromo2";
 import SectionSliderCategories from "@/components/SectionSliderCategories/SectionSliderCategories";
@@ -23,7 +25,7 @@ function PageHome() {
       <SectionHero2 />
 
       <div className="mt-24 lg:mt-32">
-        <DiscoverMoreSlider />
+        <DiscoverMoreSlider data={CATS_DISCOVER} />
       </div>
 
       <div className="container relative space-y-24 my-24 lg:space-y-32 lg:my-32">

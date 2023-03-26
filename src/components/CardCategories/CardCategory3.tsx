@@ -31,8 +31,13 @@ const CardCategory3: FC<CardCategory3Props> = ({
           <div className="absolute inset-5 sm:inset-8">
             <Image
               alt=""
-              src={featuredImage || ""}
+              src={
+                featuredImage ||
+                "https://www.grouphealth.ca/wp-content/uploads/2018/05/placeholder-image.png"
+              }
               className="absolute right-0 w-1/2 max-w-[260px] h-full object-contain drop-shadow-xl"
+              width={362}
+              height={396}
             />
           </div>
         </div>

@@ -37,8 +37,10 @@ export const CATS_DISCOVER: CardCategory3Props[] = [
     color: "bg-green-50",
   },
 ];
-
-const DiscoverMoreSlider = () => {
+interface IProps {
+  data: CardCategory3Props[];
+}
+const DiscoverMoreSlider = (props: IProps) => {
   const id = useId();
   const UNIQUE_CLASS = "glidejs" + id.replace(/:/g, "_");
   const [isShow, setIsShow] = useState(false);
@@ -96,7 +98,7 @@ const DiscoverMoreSlider = () => {
       </Heading>
       <div className="" data-glide-el="track">
         <ul className="glide__slides mb-12">
-          {CATS_DISCOVER.map((item, index) => (
+          {props?.data?.map((item, index) => (
             <li key={index} className={`glide__slide`}>
               <CardCategory3
                 name={item.name}
